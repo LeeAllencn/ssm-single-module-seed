@@ -1,0 +1,1 @@
+ssm single module seed project
