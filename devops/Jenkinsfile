@@ -1,0 +1,11 @@
+pipeline {
+    stages {
+        stage('代码更新') {
+            checkout scm: [$class: 'GitSCM', branches: [[name: '*/master']],
+                 userRemoteConfigs: [[url: 'https://github.com/LeeAllencn/ssm-single-module-seed.git']]]
+        }
+        stage('打包') {
+            sh 'mvn package'
+        }
+    }
+}
