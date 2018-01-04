@@ -3,9 +3,12 @@ pipeline {
 
     stages {
         stage('Build') {
-            dir('/'){
-                sh 'mvn package'
+            steps {
+                dir('/'){
+                    sh 'mvn package'
+                }
             }
+
         }
         stage('Test') {
             steps {
