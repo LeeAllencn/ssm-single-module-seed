@@ -1,11 +1,22 @@
-node {
+Jenkinsfile (Declarative Pipeline)
+pipeline {
+    agent any
+
     stages {
-        stage('代码更新') {
-            checkout scm: [$class: 'GitSCM', branches: [[name: '*/master']],
-                 userRemoteConfigs: [[url: 'https://github.com/LeeAllencn/ssm-single-module-seed.git']]]
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
         }
-        stage('打包') {
-            sh 'mvn package'
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
     }
 }
