@@ -1,4 +1,4 @@
-pipeline {
+node {
     stages {
         stage('代码更新') {
             checkout scm: [$class: 'GitSCM', branches: [[name: '*/master']],
