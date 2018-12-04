@@ -1,6 +1,6 @@
 # DDL
-create database rest default charset=utf8;
-use rest;
+create database ssm_single_module_seed default charset=utf8;
+use ssm_single_module_seed;
 create table user(
     user_id int(4) not null auto_increment,
     username varchar(50) default null,
